@@ -10,5 +10,5 @@ C# programs may also be deployed to an interpreter using .NET tools (e.g. `dotne
 
 The method for installing an interpreter onto a microcontroller varies by board. 
 
-`SHA256SUMS` gives each file's SHA-256, and `manifest.json` gives each tool's SHA-256. `THIRD-PARTY-NOTICES.txt` and `RUST-STANDARD-LIBRARY-NOTICES.html` list third-party software in the images and corresponding licenses.
+`SHA256SUMS` gives each file's SHA-256, and `manifest.json` carries the same. `THIRD-PARTY-NOTICES.txt` and `RUST-STANDARD-LIBRARY-NOTICES.html` list third-party software in the images and corresponding licenses.
 {{radio}}

@@ -443,4 +443,3 @@ Write-Lf (Join-Path $OutDir 'build-record.json') (($record | ConvertTo-Json -Dep
 Write-Host "==> release $Version is in $ReleaseDir"
 Get-ChildItem -LiteralPath $ReleaseDir -File | Sort-Object Name | ForEach-Object { Write-Host ("    {0,-52} {1,10:N0} B" -f $_.Name, $_.Length) }
 Write-Host "    release notes: $(Join-Path $OutDir 'release-notes.md')"
-Write-Host "    next: pwsh tools/publish-release.ps1 -Version $Version$(if ($OutRoot -ne (Join-Path $RepoRoot 'out')) { " -OutRoot $OutRoot" }) -DryRun"

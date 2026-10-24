@@ -31,6 +31,7 @@ release's tag).
 
 Build requirements:
 - PowerShell 7
+- Git
 - Rust (through rustup)
 
 ## License
