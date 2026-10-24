@@ -1,0 +1,76 @@
+{
+  "schema": 1,
+  "sourceRepository": "https://github.com/lamellaproject/lamella",
+  "firmwareRepository": "lamellaproject/lamella-interpreter-firmware",
+  "rust": "1.96.0",
+  "profiles": {
+    "speed": "flash-speed",
+    "size": "flash"
+  },
+  "languageNames": {
+    "csharp": "C#",
+    "python": "Python",
+    "ecmascript": "ECMAScript"
+  },
+  "wifi": {
+    "buildVariables": ["LAMELLA_WIFI_SSID", "LAMELLA_WIFI_PSK", "LAMELLA_WIFI_SECURITY"],
+    "secretVariables": ["LAMELLA_WIFI_SSID", "LAMELLA_WIFI_PSK"],
+    "noNetworkMessage": "wifi: no network is stored and none was named at build time",
+    "buildTimeNetworkMessage": "wifi: joining the network named at build time",
+    "radioFirmwarePins": "crates/lamella-wifi-images/src/lib.rs"
+  },
+  "boards": [
+    {
+      "board": "rpi-pico2",
+      "name": "Raspberry Pi Pico 2",
+      "language": "csharp",
+      "crate": "lamella-serve-rp2350",
+      "bin": "rp2350-csharp-interpreter",
+      "target": "thumbv8m.main-none-eabi",
+      "features": "serve,rp2350,usb",
+      "wifi": false,
+      "format": "uf2",
+      "flashBase": "0x10000000",
+      "uf2Family": "0xe48bff59"
+    },
+    {
+      "board": "rpi-pico2-w",
+      "name": "Raspberry Pi Pico 2 W",
+      "language": "csharp",
+      "crate": "lamella-serve-rp2350",
+      "bin": "rp2350-csharp-interpreter",
+      "target": "thumbv8m.main-none-eabi",
+      "features": "serve,rp2350,usb,cyw43",
+      "wifi": true,
+      "format": "uf2",
+      "flashBase": "0x10000000",
+      "uf2Family": "0xe48bff59"
+    },
+    {
+      "board": "pimoroni-pico-plus-2",
+      "name": "Pimoroni Pico Plus 2",
+      "language": "csharp",
+      "crate": "lamella-serve-rp2350",
+      "bin": "rp2350-csharp-interpreter",
+      "target": "thumbv8m.main-none-eabi",
+      "features": "serve,rp2350,usb,pico-plus-2",
+      "wifi": false,
+      "format": "uf2",
+      "flashBase": "0x10000000",
+      "uf2Family": "0xe48bff59"
+    },
+    {
+      "board": "pimoroni-pico-plus-2-w",
+      "name": "Pimoroni Pico Plus 2 W",
+      "language": "csharp",
+      "crate": "lamella-serve-rp2350",
+      "bin": "rp2350-csharp-interpreter",
+      "target": "thumbv8m.main-none-eabi",
+      "features": "serve,rp2350,usb,pico-plus-2-w",
+      "wifi": true,
+      "format": "uf2",
+      "flashBase": "0x10000000",
+      "uf2Family": "0xe48bff59"
+    }
+  ]
+}
